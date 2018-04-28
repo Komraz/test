@@ -1,0 +1,1 @@
+sfdp -Gsize=0! -Goverlap=prism -Tpng output.dot > output.png

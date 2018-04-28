@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/guava-18.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/common.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jd-core-java-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/monkeyrunner.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/chimpchat.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/littleproxy-mitm-1.1.0-beta2-shade.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ddmlib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/sdklib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

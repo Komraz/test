@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<TabPane prefHeight="686.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ViewController">
+   <tabs>
+      <Tab closable="false" text="Главная">
+         <content>
+            <AnchorPane fx:id="anchorPane" prefHeight="681.0" prefWidth="619.0">
+               <children>
+                  <Button layoutX="448.0" layoutY="95.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="25.0" prefWidth="142.0" text="Выбрать файл" AnchorPane.rightAnchor="29.0" />
+                  <Label layoutX="15.0" layoutY="71.0" text="Путь к файлу:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="71.0" />
+                  <TextField fx:id="pathToFile" layoutX="15.0" layoutY="95.0" prefHeight="25.0" prefWidth="409.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="195.0" AnchorPane.topAnchor="95.0" />
+                  <TextArea fx:id="permissionFile" editable="false" layoutX="15.0" layoutY="323.0" prefHeight="274.0" prefWidth="575.0" AnchorPane.bottomAnchor="56.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="323.0" />
+                  <Label layoutX="15.0" layoutY="301.0" text="Разрешения приложения:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="301.0" />
+                  <Button layoutX="424.0" layoutY="616.0" mnemonicParsing="false" onAction="#getPermissions" text="Вывести разрешения" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="29.0" />
+                  <Label layoutX="15.0" layoutY="14.0" text="Путь к эмулятору:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="14.0" />
+                  <TextField fx:id="pathEmulator" layoutX="11.0" layoutY="38.0" prefHeight="25.0" prefWidth="409.0" promptText="&lt;путь к Android&gt;/Sdk/tools/emulator" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="199.0" AnchorPane.topAnchor="38.0" />
+                  <Button layoutX="448.0" layoutY="38.0" mnemonicParsing="false" onAction="#chooseEmulator" prefHeight="25.0" prefWidth="142.0" text="Выбрать файл" AnchorPane.rightAnchor="29.0" />
+                  <Label layoutX="20.0" layoutY="249.0" text="Название эмулятора:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="249.0" />
+                  <TextField fx:id="nameEmulator" layoutX="15.0" layoutY="271.0" prefHeight="25.0" prefWidth="271.0" promptText="Nexus_4_API_15" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="333.0" AnchorPane.topAnchor="271.0" />
+                  <Button layoutX="303.0" layoutY="271.0" mnemonicParsing="false" onAction="#runEmulator" text="Запустить" AnchorPane.rightAnchor="227.0" />
+                  <Button layoutX="417.0" layoutY="271.0" mnemonicParsing="false" onAction="#installAPK" prefHeight="25.0" prefWidth="173.0" text="Установить APK" AnchorPane.rightAnchor="29.0" />
+                  <Label layoutX="15.0" layoutY="129.0" text="Путь к adb:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="129.0" />
+                  <TextField fx:id="pathADB" layoutX="15.0" layoutY="152.0" prefHeight="25.0" prefWidth="409.0" promptText="&lt;путь к Android&gt;/Sdk/platform-tools/adb" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="195.0" AnchorPane.topAnchor="152.0" />
+                  <Button layoutX="448.0" layoutY="152.0" mnemonicParsing="false" onAction="#chooseADB" prefHeight="25.0" prefWidth="142.0" text="Выбрать файл" AnchorPane.rightAnchor="29.0" />
+                  <Label layoutX="15.0" layoutY="184.0" text="Путь к aapt:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="184.0" />
+                  <TextField fx:id="pathAAPT" layoutX="13.0" layoutY="212.0" prefHeight="25.0" prefWidth="409.0" promptText="&lt;путь к Android&gt;/Sdk/build-tools/&lt;version&gt;/aapt" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="197.0" AnchorPane.topAnchor="212.0" />
+                  <Button layoutX="448.0" layoutY="212.0" mnemonicParsing="false" onAction="#chooseAAPT" prefHeight="25.0" prefWidth="142.0" text="Выбрать файл" AnchorPane.rightAnchor="29.0" />
+                  <Button layoutX="229.0" layoutY="616.0" mnemonicParsing="false" onAction="#runApp" text="Запустить приложение" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="210.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab closable="false" text="Логирование">
+        <content>
+          <AnchorPane>
+               <children>
+                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#saveLogs" text="Собрать логи" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+                  <TextArea fx:id="logsArea" layoutX="14.0" layoutY="56.0" prefHeight="628.0" prefWidth="586.0" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="56.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="decompileTab" closable="false" onSelectionChanged="#selectDecompile" text="Декомпиляция">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TreeView fx:id="decompileTree" layoutX="14.0" layoutY="57.0" onMouseClicked="#showDecompileCode" prefHeight="582.0" prefWidth="277.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="57.0" />
+                  <TextArea fx:id="decompileCode" layoutX="299.0" layoutY="53.0" prefHeight="586.0" prefWidth="313.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="57.0" />
+                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#showTree" text="Показать файлы" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab closable="false" text="Прокси-сервер">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#startProxy" text="Запустить" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+                  <Button layoutX="109.0" layoutY="14.0" mnemonicParsing="false" onAction="#stopProxy" text="Остановить" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="14.0" />
+                  <TextArea fx:id="logProxy" layoutX="14.0" layoutY="51.0" prefHeight="588.0" prefWidth="590.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="51.0" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="fileSystemTab" closable="false" onSelectionChanged="#selectFileSystem" text="Файловая система">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ListView fx:id="listApk" layoutX="14.0" layoutY="14.0" prefHeight="481.0" prefWidth="588.0" />
+                  <TextField fx:id="downloadPath" layoutX="14.0" layoutY="508.0" prefHeight="28.0" prefWidth="473.0" />
+                  <Button layoutX="500.0" layoutY="510.0" mnemonicParsing="false" onAction="#download" prefHeight="25.0" prefWidth="101.0" text="Скачать" AnchorPane.rightAnchor="17.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+   </tabs>
+</TabPane>
